@@ -1,0 +1,61 @@
+@import '../../styles/common.scss';
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  > .form {
+    min-width: 32rem;
+    height: 70vh;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+
+    > .logo {
+      margin-top: 3rem;
+      text-align: center;
+      color: orange;
+      font-size: 3rem;
+      font-weight: bold;
+      font-style: italic;
+    }
+    > .title {
+      text-align: center;
+    }
+    > .fields {
+      margin-top: 6rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+
+      > input {
+        @include field;
+        width: 80%;
+        height: 40px;
+        font-size: 14px;
+        padding-left: 4px;
+      }
+    }
+    > .actions {
+      margin-top: 1.5rem;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      gap: 0.4rem;
+
+      > button {
+        width: 80%;
+        color: white;
+        background-color: orange;
+        padding: 0.6rem;
+        border-radius: 2px;
+
+        &:hover {
+          background-color: darken(orange, 2);
+        }
+      }
+    }
+  }
+}

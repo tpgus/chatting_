@@ -1,0 +1,13 @@
+$header-height: 72px;
+$tint-color: #41a3ff;
+
+// Field
+@mixin field {
+  outline: none;
+  transition: border-color 0.2s;
+  border: 1px solid #dedede;
+
+  &:focus:not(:read-only) {
+    border: 2px solid $tint-color;
+  }
+}
