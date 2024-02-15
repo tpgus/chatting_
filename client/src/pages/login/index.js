@@ -1,11 +1,14 @@
 import React, { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import classNames from 'classnames/bind';
 
 import styles from './index.module.scss';
+import API from 'helpers/API';
 
 const cx = classNames.bind(styles);
 
 const Page = () => {
+  const navigate = useNavigate();
   const idRef = useRef();
   const passwordRef = useRef();
 
@@ -26,6 +29,12 @@ const Page = () => {
 
   const login = () => {
     if (!validAll()) return;
+
+    API.post('/auth/login').then(({ success }) => {
+      if (success) {
+        navigate('/', { replace: true });
+      }
+    });
   };
 
   const handleKeyDown = (e) => {

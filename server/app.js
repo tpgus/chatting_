@@ -5,6 +5,7 @@ const socket = require('socket.io');
 
 const handleSocketEvents = require('./socket');
 const userRoutes = require('./routes/users');
+const authRoutes = require('./routes/auth');
 
 // Start API Server
 const app = express();
@@ -17,6 +18,7 @@ app.use(
   })
 );
 app.use('/users', userRoutes);
+app.use('/auth', authRoutes);
 // End API Server
 
 // Start WebSocket Server
